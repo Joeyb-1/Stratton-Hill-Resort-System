@@ -16,3 +16,7 @@ C:\Users\Yusuf\source\repos\Stratton Hill Resort Management System\Stratton Hill
 C:\Users\Yusuf\source\repos\Stratton Hill Resort Management System\Stratton Hill Resort Management System\obj\Debug\Stratton_Hill_Resort_Management_System.CheckinForm.resources
 C:\Users\Yusuf\source\repos\Stratton Hill Resort Management System\Stratton Hill Resort Management System\obj\Debug\Stratton_Hill_Resort_Management_System.CheckoutForm.resources
 C:\Users\Yusuf\source\repos\Stratton Hill Resort Management System\Stratton Hill Resort Management System\obj\Debug\Stratton_Hill_Resort_Management_System.PaymentForm.resources
+C:\Users\Yusuf\source\repos\Stratton Hill Resort Management System\Stratton Hill Resort Management System\bin\Debug\Stratton Hill Resort Management System.exe.manifest
+C:\Users\Yusuf\source\repos\Stratton Hill Resort Management System\Stratton Hill Resort Management System\bin\Debug\Stratton Hill Resort Management System.application
+C:\Users\Yusuf\source\repos\Stratton Hill Resort Management System\Stratton Hill Resort Management System\obj\Debug\Stratton Hill Resort Management System.exe.manifest
+C:\Users\Yusuf\source\repos\Stratton Hill Resort Management System\Stratton Hill Resort Management System\obj\Debug\Stratton Hill Resort Management System.application
