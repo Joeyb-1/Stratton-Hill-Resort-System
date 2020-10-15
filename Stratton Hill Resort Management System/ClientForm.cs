@@ -14,6 +14,7 @@ namespace Stratton_Hill_Resort_Management_System
     public partial class ClientForm : Form
     {
         String connectionString = @"Provider = Microsoft.Jet.OLEDB.4.0; Data Source = C:\Users\Yusuf\Documents\Stratton Hill Resort Database.mdb";
+        MainForm main = new MainForm();
 
         public ClientForm()
         {
@@ -48,7 +49,6 @@ namespace Stratton_Hill_Resort_Management_System
             {
                 MessageBox.Show("Error " + ex);
             }
-
         }
 
         private void Add_Click(object sender, EventArgs e)
@@ -205,6 +205,46 @@ namespace Stratton_Hill_Resort_Management_System
             emailTxtBox.Text = "";
             phoneTxtBox.Text = "";
             dateTxtBox.Text = "";
+        }
+
+        private void nameTxtBox_TextChanged(object sender, EventArgs e)
+        {
+            if (!main.ValidateName(nameTxtBox.Text))
+            {
+                nameErr.Text = "Invalid Input";
+            }
+            else
+                nameErr.Text = "";
+        }
+
+        private void surnameTxtBox_TextChanged(object sender, EventArgs e)
+        {
+            if (!main.ValidateName(surnameTxtBox.Text))
+            {
+                surnameErr.Text = "Invalid Input";
+            }
+            else
+                surnameErr.Text = "";
+        }
+
+        private void emailTxtBox_TextChanged(object sender, EventArgs e)
+        {
+            if (!main.ValidateEmail(emailTxtBox.Text) && emailTxtBox.Text != "")
+            {
+                emailErr.Text = "Invalid Input";
+            }
+            else
+                emailErr.Text = "";
+        }
+
+        private void phoneTxtBox_TextChanged(object sender, EventArgs e)
+        {
+            if (!main.ValidatePhone(phoneTxtBox.Text) && phoneTxtBox.Text != "")
+            {
+                phoneErr.Text = "Invalid Input";
+            }
+            else
+                phoneErr.Text = "";
         }
     }
 }

@@ -37,15 +37,16 @@
             this.dateTxtBox = new System.Windows.Forms.MaskedTextBox();
             this.DisplayBtn = new System.Windows.Forms.Button();
             this.RecordBtn = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(308, 90);
+            this.dataGridView1.Location = new System.Drawing.Point(294, 92);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(455, 197);
+            this.dataGridView1.Size = new System.Drawing.Size(456, 213);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -117,11 +118,23 @@
             this.RecordBtn.UseVisualStyleBackColor = true;
             this.RecordBtn.Click += new System.EventHandler(this.RecordBtn_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Yu Gothic", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DimGray;
+            this.label8.Location = new System.Drawing.Point(243, 9);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(315, 45);
+            this.label8.TabIndex = 30;
+            this.label8.Text = "Recieve Payment";
+            // 
             // PaymentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(784, 372);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.RecordBtn);
             this.Controls.Add(this.DisplayBtn);
             this.Controls.Add(this.dateTxtBox);
@@ -151,5 +164,6 @@
         private System.Windows.Forms.MaskedTextBox dateTxtBox;
         private System.Windows.Forms.Button DisplayBtn;
         private System.Windows.Forms.Button RecordBtn;
+        private System.Windows.Forms.Label label8;
     }
 }

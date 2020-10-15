@@ -7,6 +7,7 @@ using System.Deployment.Application;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -79,6 +80,50 @@ namespace Stratton_Hill_Resort_Management_System
         {
             PaymentForm payment = new PaymentForm();
             payment.ShowDialog();
+        }
+
+        //Validate Names and Surnames
+        public bool ValidateName(String n)
+        {
+            bool returnVal = false;
+            int i = n.Length;
+
+            if (i > 30)
+            {
+                return false;
+            }
+            else
+            {
+                if (n.All(char.IsLetter))
+                    returnVal = true;
+                else
+                    returnVal = false;
+            }
+
+            return returnVal;
+        }
+
+        //Validate Email Addresses
+        public bool ValidateEmail(string n)
+        {
+            try
+            {
+                var email = new System.Net.Mail.MailAddress(n);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        //Validate Phone Numbers
+        public bool ValidatePhone(string n)
+        {
+            if (n.All(char.IsDigit))
+                return true;
+            else
+                return false;
         }
     }
 }

@@ -14,6 +14,7 @@ namespace Stratton_Hill_Resort_Management_System
     public partial class StaffForm : Form
     {
         String connectionString = @"Provider = Microsoft.Jet.OLEDB.4.0; Data Source = C:\Users\Yusuf\Documents\Stratton Hill Resort Database.mdb";
+        MainForm main = new MainForm();
         public StaffForm()
         {
             InitializeComponent();
@@ -221,6 +222,51 @@ namespace Stratton_Hill_Resort_Management_System
             baccTxtBox.Text="";
             bbranchTxtBox.Text="";
             natTxtBox.Text="";
+        }
+
+        private void nameTxtBox_TextChanged(object sender, EventArgs e)
+        {
+            if (!main.ValidateName(nameTxtBox.Text))
+            {
+                nameErr.Text = "Invalid Input";
+            }
+            else
+                nameErr.Text = "";
+        }
+
+        private void surnameTxtBox_TextChanged(object sender, EventArgs e)
+        {
+            if (!main.ValidateName(surnameTxtBox.Text))
+            {
+                surnameErr.Text = "Invalid Input";
+            }
+            else
+                surnameErr.Text = "";
+        }
+
+        private void phoneTxtBox_TextChanged(object sender, EventArgs e)
+        {
+            if (!main.ValidatePhone(phoneTxtBox.Text))
+            {
+                phoneErr.Text = "Invalid Input";
+            }
+            else
+                phoneErr.Text = "";
+        }
+
+        private void emailTxtBox_TextChanged(object sender, EventArgs e)
+        {
+            if (!main.ValidateEmail(emailTxtBox.Text) && emailTxtBox.Text != "")
+            {
+                emailErr.Text = "Invalid Input";
+            }
+            else
+                emailErr.Text = "";
+        }
+
+        private void StaffForm_Load(object sender, EventArgs e)
+        {
+
         }
     } 
 }

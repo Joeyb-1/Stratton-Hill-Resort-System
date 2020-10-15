@@ -48,32 +48,33 @@
             this.label6 = new System.Windows.Forms.Label();
             this.statusTxtBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // DisplayBtn
             // 
-            this.DisplayBtn.Location = new System.Drawing.Point(12, 330);
+            this.DisplayBtn.Location = new System.Drawing.Point(71, 285);
             this.DisplayBtn.Name = "DisplayBtn";
             this.DisplayBtn.Size = new System.Drawing.Size(75, 23);
             this.DisplayBtn.TabIndex = 0;
-            this.DisplayBtn.Text = "Display";
+            this.DisplayBtn.Text = "Display All";
             this.DisplayBtn.UseVisualStyleBackColor = true;
             this.DisplayBtn.Click += new System.EventHandler(this.DisplayBtn_Click);
             // 
             // Add
             // 
-            this.Add.Location = new System.Drawing.Point(93, 330);
+            this.Add.Location = new System.Drawing.Point(163, 285);
             this.Add.Name = "Add";
             this.Add.Size = new System.Drawing.Size(75, 23);
             this.Add.TabIndex = 1;
-            this.Add.Text = "Add";
+            this.Add.Text = "Add New";
             this.Add.UseVisualStyleBackColor = true;
             this.Add.Click += new System.EventHandler(this.Add_Click);
             // 
             // UpdateBtn
             // 
-            this.UpdateBtn.Location = new System.Drawing.Point(174, 330);
+            this.UpdateBtn.Location = new System.Drawing.Point(71, 330);
             this.UpdateBtn.Name = "UpdateBtn";
             this.UpdateBtn.Size = new System.Drawing.Size(75, 23);
             this.UpdateBtn.TabIndex = 2;
@@ -83,7 +84,7 @@
             // 
             // ClearBtn
             // 
-            this.ClearBtn.Location = new System.Drawing.Point(133, 374);
+            this.ClearBtn.Location = new System.Drawing.Point(118, 374);
             this.ClearBtn.Name = "ClearBtn";
             this.ClearBtn.Size = new System.Drawing.Size(75, 23);
             this.ClearBtn.TabIndex = 3;
@@ -93,7 +94,7 @@
             // 
             // DeleteBtn
             // 
-            this.DeleteBtn.Location = new System.Drawing.Point(255, 330);
+            this.DeleteBtn.Location = new System.Drawing.Point(163, 330);
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Size = new System.Drawing.Size(75, 23);
             this.DeleteBtn.TabIndex = 4;
@@ -104,9 +105,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(349, 40);
+            this.dataGridView1.Location = new System.Drawing.Point(346, 84);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(423, 264);
+            this.dataGridView1.Size = new System.Drawing.Size(505, 297);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -222,11 +223,23 @@
             this.label7.TabIndex = 19;
             this.label7.Text = "Status:";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Yu Gothic", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DimGray;
+            this.label8.Location = new System.Drawing.Point(211, 9);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(455, 45);
+            this.label8.TabIndex = 30;
+            this.label8.Text = "Maintain Accommodation";
+            // 
             // AccommodationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(882, 450);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.statusTxtBox);
             this.Controls.Add(this.label6);
@@ -277,5 +290,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox statusTxtBox;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }
