@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
+using System.Deployment.Application;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -48,6 +49,36 @@ namespace Stratton_Hill_Resort_Management_System
         private void MainForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void AccommBtn_Click(object sender, EventArgs e)
+        {
+            AccommodationForm accommodation = new AccommodationForm();
+            accommodation.Show();
+        }
+
+        private void BookingBtn_Click(object sender, EventArgs e)
+        {
+            BookingForm booking = new BookingForm();
+            booking.Show();
+        }
+
+        private void CheckinBtn_Click(object sender, EventArgs e)
+        {
+            CheckinForm checkin = new CheckinForm();
+            checkin.ShowDialog();
+        }
+
+        private void CheckoutBtn_Click(object sender, EventArgs e)
+        {
+            CheckoutForm checkout = new CheckoutForm();
+            checkout.ShowDialog();
+        }
+
+        private void PaymentBtn_Click(object sender, EventArgs e)
+        {
+            PaymentForm payment = new PaymentForm();
+            payment.ShowDialog();
         }
     }
 }

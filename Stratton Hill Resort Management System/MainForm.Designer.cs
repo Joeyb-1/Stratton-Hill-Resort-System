@@ -56,6 +56,7 @@
             this.AccommBtn.TabIndex = 1;
             this.AccommBtn.Text = "Maintain Accommodation";
             this.AccommBtn.UseVisualStyleBackColor = true;
+            this.AccommBtn.Click += new System.EventHandler(this.AccommBtn_Click);
             // 
             // StaffBtn
             // 
@@ -75,6 +76,7 @@
             this.BookingBtn.TabIndex = 3;
             this.BookingBtn.Text = "Make a Booking";
             this.BookingBtn.UseVisualStyleBackColor = true;
+            this.BookingBtn.Click += new System.EventHandler(this.BookingBtn_Click);
             // 
             // CheckinBtn
             // 
@@ -84,6 +86,7 @@
             this.CheckinBtn.TabIndex = 4;
             this.CheckinBtn.Text = "Check In";
             this.CheckinBtn.UseVisualStyleBackColor = true;
+            this.CheckinBtn.Click += new System.EventHandler(this.CheckinBtn_Click);
             // 
             // PaymentBtn
             // 
@@ -93,6 +96,7 @@
             this.PaymentBtn.TabIndex = 5;
             this.PaymentBtn.Text = "Recieve Payment";
             this.PaymentBtn.UseVisualStyleBackColor = true;
+            this.PaymentBtn.Click += new System.EventHandler(this.PaymentBtn_Click);
             // 
             // CheckoutBtn
             // 
@@ -102,6 +106,7 @@
             this.CheckoutBtn.TabIndex = 6;
             this.CheckoutBtn.Text = "Check Out";
             this.CheckoutBtn.UseVisualStyleBackColor = true;
+            this.CheckoutBtn.Click += new System.EventHandler(this.CheckoutBtn_Click);
             // 
             // reportBtn
             // 

@@ -11,24 +11,18 @@ using System.Windows.Forms;
 
 namespace Stratton_Hill_Resort_Management_System
 {
-    public partial class ClientForm : Form
+    public partial class AccommodationForm : Form
     {
         String connectionString = @"Provider = Microsoft.Jet.OLEDB.4.0; Data Source = C:\Users\Yusuf\Documents\Stratton Hill Resort Database.mdb";
-
-        public ClientForm()
+        public AccommodationForm()
         {
             InitializeComponent();
-        }
-
-        private void ClientForm_Load(object sender, EventArgs e)
-        {
-            dateTxtBox.Mask = "####/##/##";
         }
 
         private void DisplayBtn_Click(object sender, EventArgs e)
         {
             //Sql query variable
-            string sql = "select * from Client";
+            string sql = "SELECT * from Room";
 
             try
             {
@@ -48,22 +42,21 @@ namespace Stratton_Hill_Resort_Management_System
             {
                 MessageBox.Show("Error " + ex);
             }
-
         }
 
         private void Add_Click(object sender, EventArgs e)
         {
             //Variables 
-            string id = idTxtBox.Text;
-            string name = nameTxtBox.Text;
-            string surname = surnameTxtBox.Text;
-            string username = usernameTxtBox.Text;
-            string email = emailTxtBox.Text;
-            string phone = phoneTxtBox.Text;
-            string birthdate = dateTxtBox.Text;
+            string unitNo = unitTxtBox.Text;
+            string type = typeTxtBox.Text;
+            string adults = adultsTxtBox.Text;
+            string children = childTxtBox.Text;
+            string bed = bedTxtBox.Text;
+            string bath = bathTxtBox.Text;
+            string status = statusTxtBox.Text;
 
             //Sql query variable
-            string sql = "insert into Client (Client_ID,First_Name,Last_Name,Username,Email,Phone_Number,Birth_Date) VALUES (@Client_ID,@First_Name,@Last_Name, @Username, @Email, @Phone_Number, @Birth_Date)";
+            string sql = "insert into Room (Unit_Number,Room_Type,Adults_No,Children_No,Bedrooms_No,Bathrooms_No,Status) VALUES (@unitNo,@type,@adults,@children,@bed,@bath,@status)";
 
             try
             {
@@ -73,14 +66,13 @@ namespace Stratton_Hill_Resort_Management_System
                 //Declaring Variable
                 OleDbCommand command = new OleDbCommand(sql, conn);
 
-                command.Parameters.AddWithValue("@Client_ID", id);
-                command.Parameters.AddWithValue("@First_Name", name);
-                command.Parameters.AddWithValue("@Last_Name", surname);
-                command.Parameters.AddWithValue("@Username", username);
-                command.Parameters.AddWithValue("@Email", email);
-                command.Parameters.AddWithValue("@Phone_Number", phone);
-                command.Parameters.AddWithValue("@Birth_Date", birthdate);
-
+                command.Parameters.AddWithValue("@unitNo", unitNo);
+                command.Parameters.AddWithValue("@type", type);
+                command.Parameters.AddWithValue("@adults", adults);
+                command.Parameters.AddWithValue("@children", children);
+                command.Parameters.AddWithValue("@bed", bed);
+                command.Parameters.AddWithValue("@bath", bath);
+                command.Parameters.AddWithValue("@status", status);
                 //Open connection
                 conn.Open();
 
@@ -103,16 +95,16 @@ namespace Stratton_Hill_Resort_Management_System
         private void UpdateBtn_Click(object sender, EventArgs e)
         {
             //Variables 
-            string id = idTxtBox.Text;
-            string name = nameTxtBox.Text;
-            string surname = surnameTxtBox.Text;
-            string username = usernameTxtBox.Text;
-            string email = emailTxtBox.Text;
-            string phone = phoneTxtBox.Text;
-            string birthdate = dateTxtBox.Text;
+            string unitNo = unitTxtBox.Text;
+            string type = typeTxtBox.Text;
+            string adults = adultsTxtBox.Text;
+            string children = childTxtBox.Text;
+            string bed = bedTxtBox.Text;
+            string bath = bathTxtBox.Text;
+            string status = statusTxtBox.Text;
 
             //sql query variable 
-            string sql = "UPDATE Client SET First_Name = @First_Name, Last_Name = @Last_Name, Username = @Username, Email = @Email, Phone_Number = @Phone_Number, Birth_Date = @Birth_Date WHERE Client_ID = @Client_ID";
+            string sql = "UPDATE Room SET Room_Type = @type, Adults_No = @adults, Children_No = @children, Bedrooms_No = @bed, Bathrooms_No = @bath, Status = @status WHERE Unit_Number = @unitNo";
 
             try
             {
@@ -121,14 +113,14 @@ namespace Stratton_Hill_Resort_Management_System
 
                 OleDbCommand command = new OleDbCommand(sql, conn);
 
-                command.Parameters.AddWithValue("@First_Name", name);
-                command.Parameters.AddWithValue("@Last_Name", surname);
-                command.Parameters.AddWithValue("@Username", username);
-                command.Parameters.AddWithValue("@Email", email);
-                command.Parameters.AddWithValue("@Phone_Number", phone);
-                command.Parameters.AddWithValue("@Birth_Date", birthdate);
-                command.Parameters.AddWithValue("@Client_ID", id);
-                command.Parameters["@Client_ID"].Value = id;
+                command.Parameters.AddWithValue("@type", type);
+                command.Parameters.AddWithValue("@adults", adults);
+                command.Parameters.AddWithValue("@children", children);
+                command.Parameters.AddWithValue("@bed", bed);
+                command.Parameters.AddWithValue("@bath", bath);
+                command.Parameters.AddWithValue("@status", status);
+                command.Parameters.AddWithValue("@unitNo", unitNo);
+                command.Parameters["@unitNo"].Value = unitNo;
 
                 //open connections
                 conn.Open();
@@ -148,30 +140,29 @@ namespace Stratton_Hill_Resort_Management_System
             DisplayBtn.PerformClick();
         }
 
-
-
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                idTxtBox.Text = row.Cells[0].Value.ToString();
-                nameTxtBox.Text = row.Cells[1].Value.ToString();
-                surnameTxtBox.Text = row.Cells[2].Value.ToString();
-                usernameTxtBox.Text = row.Cells[3].Value.ToString();
-                emailTxtBox.Text = row.Cells[4].Value.ToString();
-                phoneTxtBox.Text = row.Cells[5].Value.ToString();
-                dateTxtBox.Text = row.Cells[6].Value.ToString();
+                unitTxtBox.Text = row.Cells[0].Value.ToString();
+                typeTxtBox.Text = row.Cells[1].Value.ToString();
+                adultsTxtBox.Text = row.Cells[2].Value.ToString();
+                childTxtBox.Text = row.Cells[3].Value.ToString();
+                bedTxtBox.Text = row.Cells[4].Value.ToString();
+                bathTxtBox.Text = row.Cells[5].Value.ToString();
+                statusTxtBox.Text = row.Cells[6].Value.ToString();
+
             }
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
             //Variable
-            string id = idTxtBox.Text;
+            string unitNo = unitTxtBox.Text;
 
             //sql query variable 
-            string sql = "DELETE FROM Client WHERE Client_ID = @Client_ID";
+            string sql = "DELETE FROM Room WHERE Unit_Number = @unitNo";
 
             try
             {
@@ -179,8 +170,8 @@ namespace Stratton_Hill_Resort_Management_System
 
                 OleDbCommand command = new OleDbCommand(sql, conn);
 
-                command.Parameters.AddWithValue("@Client_ID", id);
-                command.Parameters["@Client_ID"].Value = id;
+                command.Parameters.AddWithValue("@unitNo", unitNo);
+                command.Parameters["@unitNo"].Value = unitNo;
 
                 conn.Open();
                 command.ExecuteNonQuery();
@@ -188,7 +179,7 @@ namespace Stratton_Hill_Resort_Management_System
 
                 MessageBox.Show("Deletion Successful");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error" + ex);
             }
@@ -198,13 +189,13 @@ namespace Stratton_Hill_Resort_Management_System
 
         private void ClearBtn_Click(object sender, EventArgs e)
         {
-            idTxtBox.Text = "";
-            nameTxtBox.Text = "";
-            surnameTxtBox.Text = "";
-            usernameTxtBox.Text = "";
-            emailTxtBox.Text = "";
-            phoneTxtBox.Text = "";
-            dateTxtBox.Text = "";
+            unitTxtBox.Text = "";
+            typeTxtBox.Text = "";
+            adultsTxtBox.Text = "";
+            childTxtBox.Text = "";
+            bedTxtBox.Text = "";
+            bathTxtBox.Text = "";
+            statusTxtBox.Text = "";
         }
     }
 }

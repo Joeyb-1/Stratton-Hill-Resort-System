@@ -108,6 +108,7 @@
             this.ClearBtn.TabIndex = 5;
             this.ClearBtn.Text = "Clear Fields";
             this.ClearBtn.UseVisualStyleBackColor = true;
+            this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
             // 
             // label1
             // 
