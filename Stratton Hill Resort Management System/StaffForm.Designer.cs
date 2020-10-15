@@ -61,6 +61,7 @@
             this.phoneErr = new System.Windows.Forms.Label();
             this.emailErr = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -350,11 +351,21 @@
             this.label12.TabIndex = 55;
             this.label12.Text = "Maintain Staff";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(602, 497);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(280, 13);
+            this.label13.TabIndex = 56;
+            this.label13.Text = "Role 1 - Cleaner | Role 2 - Receptionist | Role 3 - Manager";
+            // 
             // StaffForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1148, 533);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.emailErr);
             this.Controls.Add(this.phoneErr);
@@ -432,5 +443,6 @@
         private System.Windows.Forms.Label phoneErr;
         private System.Windows.Forms.Label emailErr;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }
